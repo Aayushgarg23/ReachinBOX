@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 
 const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:4000";
 const API_SECRET = process.env.API_SECRET || "reachinbox-dev-secret-2024";
