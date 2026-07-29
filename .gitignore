@@ -1,0 +1,21 @@
+# Root .gitignore
+node_modules/
+.env
+.env.local
+*.log
+.DS_Store
+
+# Ethereal credentials
+backend/.ethereal-accounts.json
+
+# Build output
+dist/
+.next/
+out/
+
+# Prisma migrations generated locally
+# (keep migrations committed for deployment)
+
+# Docker volumes
+mysql_data/
+redis_data/

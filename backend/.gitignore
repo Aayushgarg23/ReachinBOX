@@ -1,0 +1,16 @@
+# Node
+node_modules/
+dist/
+
+# Env
+.env
+.env.local
+
+# Ethereal accounts (contains credentials — do not commit in production)
+.ethereal-accounts.json
+
+# Prisma
+prisma/migrations/
+
+# Logs
+*.log
