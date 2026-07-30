@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  devIndicators: false,
+  devIndicators: { appIsrStatus: false, buildActivity: false },
   images: {
     remotePatterns: [
       {
