@@ -239,11 +239,9 @@ function Sidebar({
             />
             <span>Scheduled</span>
           </div>
-          {stats.scheduled > 0 && (
-            <span className="text-[10px] font-semibold text-gray-500 bg-gray-200 px-1.5 py-0.5 rounded-full">
+          <span className="text-[10px] font-semibold text-gray-500 bg-gray-200 px-1.5 py-0.5 rounded-full">
               {stats.scheduled > 99 ? "99+" : stats.scheduled}
             </span>
-          )}
         </button>
 
         <button
@@ -262,11 +260,9 @@ function Sidebar({
             />
             <span>Sent</span>
           </div>
-          {stats.sent > 0 && (
-            <span className="text-[10px] font-semibold text-gray-500 bg-gray-200 px-1.5 py-0.5 rounded-full">
+          <span className="text-[10px] font-semibold text-gray-500 bg-gray-200 px-1.5 py-0.5 rounded-full">
               {stats.sent > 99 ? "99+" : stats.sent}
             </span>
-          )}
         </button>
       </nav>
     </aside>

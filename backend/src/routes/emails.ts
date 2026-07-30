@@ -95,7 +95,7 @@ router.get("/stats", async (_req: Request, res: Response) => {
       (stats["pending"] || 0) +
       (stats["queued"] || 0) +
       (stats["rescheduled"] || 0);
-    const sent = stats["sent"] || 0;
+    const sent = (stats["sent"] || 0) + (stats["failed"] || 0);
 
     return res.json({ ...stats, scheduled, sent });
   } catch (err) {
