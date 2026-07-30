@@ -22,7 +22,7 @@ router.get("/", async (req: Request, res: Response) => {
         EmailStatus.rescheduled,
       ];
     } else if (statusParam === "sent") {
-      statusFilter = [EmailStatus.sent];
+      statusFilter = [EmailStatus.sent, EmailStatus.failed];
     } else if (statusParam === "failed") {
       statusFilter = [EmailStatus.failed];
     } else if (statusParam === "processing") {
