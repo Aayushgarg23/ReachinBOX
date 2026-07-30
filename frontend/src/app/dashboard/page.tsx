@@ -279,16 +279,21 @@ export default function DashboardPage() {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("scheduled");
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState<string>("scheduled");
+  const [scheduledFilter, setScheduledFilter] = useState<string>("scheduled");
+  const [sentFilter, setSentFilter] = useState<string>("sent");
   const [showFilter, setShowFilter] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
+
+  // Derived values based on active tab
+  const statusFilter = tab === "scheduled" ? scheduledFilter : sentFilter;
+  const setStatusFilter = tab === "scheduled" ? setScheduledFilter : setSentFilter;
   const filterBtnRef = useRef<HTMLButtonElement>(null);
   const { stats } = useEmailStats(10000);
 
-  // Reset filter when switching tabs
+  // Only reset search when switching tabs (filters are now per-tab)
   useEffect(() => {
-    setStatusFilter(tab === "scheduled" ? "scheduled" : "sent");
     setSearch("");
+    setShowFilter(false);
   }, [tab]);
 
   useEffect(() => {
